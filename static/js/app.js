@@ -44,10 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Test connection on load
   setTimeout(testConnection, 1000)
 })
-fetch(`${API_URL}/predict`, {
-  method: "POST",
-  body: formData
-})
+fetch('https://green-diagnosis.onrender.com/predict')
 // Navigation functions
 function initializeNavigation() {
   // Handle navigation clicks
