@@ -1,0 +1,11 @@
+# GREEN Diagnosis Backend Requirements
+# Install with: pip install -r requirements.txt
+
+flask
+flask-cors
+tensorflow
+opencv-python-headless
+numpy
+pillow
+gunicorn
+gdown
