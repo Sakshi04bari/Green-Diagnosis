@@ -10,8 +10,8 @@ from flask_cors import CORS
 from PIL import Image
 import gdown
 
-app = Flask(__name__)
-CORS(app)  # Add this line to enable CORS
+
+ # Add this line to enable CORS
 
 
 
@@ -19,28 +19,26 @@ MODEL_PATH = "banana_Leaf_disease_model.h5"
 
 if not os.path.exists(MODEL_PATH):
     gdown.download(
-        "https://drive.google.com/file/d/1EBRk7RIuNxLGzUi54JMS1c5_-YshYvEu/view?usp=sharing",
-        MODEL_PATH,
-        quiet=False
-    )
+    "https://drive.google.com/uc?id=1EBRk7RIuNxLGzUi54JMS1c5_-YshYvEu",
+    MODEL_PATH,
+    quiet=False
+)
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
 # Initialize Flask app
-app = Flask(__name__, 
-           template_folder='templates', 
-           static_folder='static')
+app = Flask(
+    __name__,
+    template_folder='templates',
+    static_folder='static'
+)
 
 # Enable CORS for all routes
 CORS(app, origins=[
-    "http://localhost:5000",
-    "http://127.0.0.1:5000",
+    "https://green-diagnosis.onrender.com",
     "http://localhost:3000",
-    "http://127.0.0.1:3000",
-    "http://localhost:3001",
-    "http://localhost:8000",
-    "http://127.0.0.1:8000"
+    "http://localhost:5000"
 ])
 
 # Global variables
