@@ -9,7 +9,7 @@ const navLinks = document.querySelectorAll(".nav-link")
 const pages = document.querySelectorAll(".page")
 const navToggle = document.getElementById("navToggle")
 const navMenu = document.getElementById("navMenu")
-
+const API_URL = "https://green-diagnosis.onrender.com";
 // Detection page elements
 const uploadArea = document.getElementById("uploadArea")
 const imageInput = document.getElementById("imageInput")
@@ -44,7 +44,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // Test connection on load
   setTimeout(testConnection, 1000)
 })
-
+fetch(`${API_URL}/predict`, {
+  method: "POST",
+  body: formData
+})
 // Navigation functions
 function initializeNavigation() {
   // Handle navigation clicks
